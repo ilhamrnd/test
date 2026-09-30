@@ -8,18 +8,18 @@ const card = {
   story: {
     title: "A look back on our relationship for the past year",
     items: [
-      { image: "images/photo-02.svg", date: "DATE", caption: "PLACEHOLDER: first memory" },
-      { image: "images/photo-03.svg", date: "DATE", caption: "PLACEHOLDER: early days" },
-      { image: "images/photo-04.svg", date: "DATE", caption: "PLACEHOLDER: when I knew" }
+      { image: "images/photo-02.JPG", date: "DATE", caption: "PLACEHOLDER: first memory" },
+      { image: "images/photo-03.JPG", date: "DATE", caption: "PLACEHOLDER: early days" },
+      { image: "images/photo-04.JPG", date: "DATE", caption: "PLACEHOLDER: when I knew" }
     ]
   },
 
   memories: {
     title: "Places we've been",
     items: [
-      { image: "images/photo-05.svg", date: "DATE", caption: "Our first trip together" },
-      { image: "images/photo-06.svg", date: "DATE", caption: "Our first overseas trip together" },
-      { image: "images/photo-07.svg", date: "DATE", caption: "PLACEHOLDER MEMORY" },
+      { image: "images/photo-05.JPG", date: "DATE", caption: "Our first trip together" },
+      { image: "images/photo-06.JPG", date: "DATE", caption: "Our first overseas trip together" },
+      { image: "images/photo-07.JPG", date: "DATE", caption: "PLACEHOLDER MEMORY" },
       { image: "images/photo-08.svg", date: "DATE", caption: "PLACEHOLDER MEMORY" }
     ]
   },
@@ -28,9 +28,9 @@ const card = {
     title: "The random little things",
     intro: "PLACEHOLDER: a line about ordinary moments.",
     items: [
-      { image: "images/photo-09.svg", caption: "PLACEHOLDER: little thing" },
-      { image: "images/photo-10.svg", caption: "PLACEHOLDER: little thing" },
-      { image: "images/photo-11.svg", caption: "PLACEHOLDER: little thing" }
+      { image: "images/photo-09.PNG", caption: "PLACEHOLDER: little thing" },
+      { image: "images/photo-10.JPG", caption: "PLACEHOLDER: little thing" },
+      { image: "images/photo-11.JPG", caption: "PLACEHOLDER: little thing" }
     ]
   },
 
@@ -92,7 +92,7 @@ function render(c) {
     </section>
 
     <section>
-      <h2>${esc(c.letter.title)}</h2>
+      ${c.letter.title ? `<h2>${esc(c.letter.title)}</h2>` : ""}
       <div class="letter-photos">${c.letter.images.map(polaroid).join("")}</div>
       <div class="letter-paper">${paragraphs(c.letter.text)}</div>
     </section>
