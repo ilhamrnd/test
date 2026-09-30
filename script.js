@@ -3,7 +3,7 @@ const card = {
   name: "Alia Salsabilla",
   from: "Ilham Randi",
 
-  hero: { image: "images/photo-01.svg", intro: "For you, the woman who radiates like the sun" },
+  hero: { image: "images/photo-01.JPG", intro: "For you, the woman who radiates like the sun" },
 
   story: {
     title: "A look back on our relationship for the past year",
