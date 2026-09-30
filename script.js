@@ -2,6 +2,7 @@
 const card = {
   name: "Alia Salsabilla",
   from: "Ilham Randi",
+  gate: { message: "To the most beautiful girl who just turned 28" },
 
   hero: { image: "images/photo-01.JPG", intro: "For you, the woman who radiates like the sun" },
 
@@ -10,7 +11,7 @@ const card = {
     items: [
       { image: "images/photo-02.JPG", date: "DATE", caption: "PLACEHOLDER: first memory" },
       { image: "images/photo-03.JPG", date: "DATE", caption: "PLACEHOLDER: early days" },
-      { image: "images/photo-04.JPG", date: "DATE", caption: "PLACEHOLDER: when I knew" }
+      { image: "images/photo-04.svg", date: "DATE", caption: "PLACEHOLDER: when I knew" }
     ]
   },
 
@@ -20,7 +21,7 @@ const card = {
       { image: "images/photo-05.JPG", date: "DATE", caption: "Our first trip together" },
       { image: "images/photo-06.JPG", date: "DATE", caption: "Our first overseas trip together" },
       { image: "images/photo-07.JPG", date: "DATE", caption: "PLACEHOLDER MEMORY" },
-      { image: "images/photo-08.svg", date: "DATE", caption: "PLACEHOLDER MEMORY" }
+      { image: "images/photo-08.JPG", date: "DATE", caption: "PLACEHOLDER MEMORY" }
     ]
   },
 
@@ -28,7 +29,7 @@ const card = {
     title: "The random little things",
     intro: "PLACEHOLDER: a line about ordinary moments.",
     items: [
-      { image: "images/photo-09.PNG", caption: "PLACEHOLDER: little thing" },
+      { image: "images/photo-09.JPG", caption: "PLACEHOLDER: little thing" },
       { image: "images/photo-10.JPG", caption: "PLACEHOLDER: little thing" },
       { image: "images/photo-11.JPG", caption: "PLACEHOLDER: little thing" }
     ]
@@ -36,8 +37,8 @@ const card = {
 
   letter: {
     images: [
-      { image: "images/photo-12.svg", caption: "" },
-      { image: "images/photo-13.svg", caption: "" }
+      { image: "images/photo-12.JPG", caption: "" },
+      { image: "images/photo-13.JPG", caption: "" }
     ],
     text: `
       PLACEHOLDER BIRTHDAY LETTER. First paragraph.
@@ -47,7 +48,7 @@ const card = {
   },
 
   ending: {
-    image: "images/photo-14.svg",
+    image: "images/photo-14.JPG",
     message: "I know i havent been the best of partner, ",
     tagline: "Here’s to all the memories we haven’t made yet. And to forever of spending your birthdays together.",
     signature: "Love, Ilham Randi"
@@ -67,7 +68,7 @@ const paragraphs = t => t.trim().split(/\n\s*\n/).map(p => `<p>${esc(p.replace(/
 
 function render(c) {
   document.title = `Happy Birthday, ${c.name}`;
-  document.getElementById("gate-name").textContent = c.name;
+  document.getElementById("gate-name").textContent = c.gate.message;
   document.getElementById("app").innerHTML = `
     <section class="hero">
       <h1>Happy Birthday, ${esc(c.name)}</h1>
@@ -114,6 +115,24 @@ function reveal() {
   els.forEach(e => io.observe(e));
 }
 
+function balloons() {
+  const wrap = document.getElementById("balloons");
+  if (!wrap) return;
+  const colors = ["#fb9db1", "#ec6a9c", "#ffc2d1", "#fff0f3", "#f783a1", "#ffe3ec"];
+  for (let i = 0; i < 9; i++) {
+    const b = document.createElement("span");
+    b.className = "balloon";
+    b.style.left = 4 + Math.random() * 88 + "%";
+    b.style.background = colors[i % colors.length];
+    b.style.animationDelay = -Math.random() * 20 + "s";
+    b.style.setProperty("--d", 11 + Math.random() * 9 + "s");
+    const s = 0.7 + Math.random() * 0.8;
+    b.style.width = 54 * s + "px";
+    b.style.height = 68 * s + "px";
+    wrap.appendChild(b);
+  }
+}
+
 function gate() {
   const g = document.getElementById("gate");
   document.getElementById("open").addEventListener("click", () => {
@@ -125,4 +144,5 @@ function gate() {
 document.documentElement.classList.add("js");
 render(card);
 reveal();
+balloons();
 gate();
