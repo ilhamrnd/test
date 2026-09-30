@@ -1,12 +1,12 @@
 /* ============ EDIT THIS: all personal content lives here ============ */
 const card = {
-  name: "HER NAME",
-  from: "YOUR NAME",
+  name: "Alia Salsabilla",
+  from: "Ilham Randi",
 
-  hero: { image: "images/photo-01.svg", intro: "A little something for you…" },
+  hero: { image: "images/photo-01.svg", intro: "For you, the woman who radiates like the sun" },
 
   story: {
-    title: "How it started",
+    title: "A look back on our relationship for the past year",
     items: [
       { image: "images/photo-02.svg", date: "DATE", caption: "PLACEHOLDER: first memory" },
       { image: "images/photo-03.svg", date: "DATE", caption: "PLACEHOLDER: early days" },
@@ -17,15 +17,15 @@ const card = {
   memories: {
     title: "Places we've been",
     items: [
-      { image: "images/photo-05.svg", date: "DATE", caption: "PLACEHOLDER MEMORY" },
-      { image: "images/photo-06.svg", date: "DATE", caption: "PLACEHOLDER MEMORY" },
+      { image: "images/photo-05.svg", date: "DATE", caption: "Our first trip together" },
+      { image: "images/photo-06.svg", date: "DATE", caption: "Our first overseas trip together" },
       { image: "images/photo-07.svg", date: "DATE", caption: "PLACEHOLDER MEMORY" },
       { image: "images/photo-08.svg", date: "DATE", caption: "PLACEHOLDER MEMORY" }
     ]
   },
 
   little: {
-    title: "The little things",
+    title: "The random little things",
     intro: "PLACEHOLDER: a line about ordinary moments.",
     items: [
       { image: "images/photo-09.svg", caption: "PLACEHOLDER: little thing" },
@@ -35,7 +35,6 @@ const card = {
   },
 
   letter: {
-    title: "For you",
     images: [
       { image: "images/photo-12.svg", caption: "" },
       { image: "images/photo-13.svg", caption: "" }
@@ -49,9 +48,9 @@ const card = {
 
   ending: {
     image: "images/photo-14.svg",
-    message: "PLACEHOLDER: final birthday message.",
-    tagline: "Here’s to all the memories we haven’t made yet.",
-    signature: "Love, YOUR NAME"
+    message: "I know i havent been the best of partner, ",
+    tagline: "Here’s to all the memories we haven’t made yet. And to forever of spending your birthdays together.",
+    signature: "Love, Ilham Randi"
   }
 };
 /* ==================================================================== */
