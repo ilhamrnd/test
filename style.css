@@ -7,9 +7,10 @@
 html{scroll-behavior:smooth}
 body{
   font-family:var(--serif);color:var(--ink);line-height:1.6;font-size:18px;
-  background:var(--paper) radial-gradient(#f6c9d6 1px,transparent 1.2px) 0 0/22px 22px;
+  background:var(--paper);
   padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
 }
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:linear-gradient(rgba(253,238,242,.78),rgba(253,238,242,.78)),url("images/bgrnd.jpg") center/cover no-repeat}
 body.locked{overflow:hidden;height:100%}
 img{display:block;max-width:100%}
 #app{max-width:480px;margin:0 auto;padding:0 20px 80px}
@@ -25,11 +26,6 @@ h2{font-family:var(--hand);font-weight:700;font-size:2.4rem;line-height:1.1;marg
 .env::before{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent 49.5%,#f3cdd9 50%) 0 0/50% 100% no-repeat,linear-gradient(to top left,transparent 49.5%,#f3cdd9 50%) 100% 0/50% 100% no-repeat}
 .flap{position:absolute;left:0;right:0;top:0;height:58%;background:#fbdce8;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s ease;z-index:2}
 .to{position:relative;z-index:3;font-family:var(--hand);font-weight:700;font-size:1.35rem;line-height:1.25;color:var(--ink);margin-top:2%;max-width:82%;text-align:center}
-.heart{position:relative;z-index:1;width:22px;height:22px;margin-top:10%;transform:rotate(-45deg);background:#e5383b;animation:beat 1.6s ease-in-out infinite}
-.heart::before,.heart::after{content:"";position:absolute;width:22px;height:22px;border-radius:50%;background:#e5383b}
-.heart::before{left:-11px}
-.heart::after{top:-11px}
-@keyframes beat{0%,100%{transform:rotate(-45deg) scale(1)}50%{transform:rotate(-45deg) scale(1.15)}}
 .balloons{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .balloon{position:absolute;bottom:-140px;border-radius:50% 50% 48% 52%/42% 42% 58% 58%;opacity:.9;animation:rise var(--d,14s) linear infinite}
 .balloon::before{content:"";position:absolute;left:50%;bottom:-6px;width:8px;height:8px;background:inherit;transform:translateX(-50%) rotate(45deg)}
@@ -86,7 +82,7 @@ h2{font-family:var(--hand);font-weight:700;font-size:2.4rem;line-height:1.1;marg
 .js .polaroid.in{opacity:1;transform:rotate(var(--r)) scale(1);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.3,1)}
 @media (prefers-reduced-motion:reduce){
   .js .polaroid{opacity:1;transform:rotate(var(--r))}
-  .flap,#gate{transition-duration:.01s}.hint,.balloon,.heart{animation:none}
+  .flap,#gate{transition-duration:.01s}.hint,.balloon{animation:none}
 }
 @media (min-width:700px){body{font-size:19px}#app{padding-top:20px}}
 :focus-visible{outline:3px solid var(--tape);outline-offset:4px}
