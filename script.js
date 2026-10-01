@@ -9,9 +9,9 @@ const card = {
   story: {
     title: "A look back on our relationship for the past year",
     items: [
-      { image: "images/photo-02.JPG", caption: "PLACEHOLDER: first memory" },
-      { image: "images/photo-03.JPG", caption: "PLACEHOLDER: early days" },
-      { image: "images/photo-04.JPG", caption: "PLACEHOLDER: when I knew" }
+      { image: "images/photo-02.JPG", caption: "Valentine's Day" },
+      { image: "images/photo-03.JPG", caption: "Imagining we're in the 80s" },
+      { image: "images/photo-04.JPG", caption: "Felt like a honeymoon" }
     ]
   },
 
@@ -20,18 +20,17 @@ const card = {
     items: [
       { image: "images/photo-05.JPG", caption: "Our first trip together" },
       { image: "images/photo-06.JPG", caption: "Our first overseas trip together" },
-      { image: "images/photo-07.JPG", caption: "PLACEHOLDER MEMORY" },
-      { image: "images/photo-08.JPG", caption: "PLACEHOLDER MEMORY" }
+      { image: "images/photo-07.JPG", caption: "Memories I will remember forever" },
+      { image: "images/photo-08.JPG" }
     ]
   },
 
   little: {
-    title: "The random little things",
-    intro: "PLACEHOLDER: a line about ordinary moments.",
+    title: "One of our many activities that I will remember forever",
     items: [
-      { image: "images/photo-09.JPG", caption: "PLACEHOLDER: little thing" },
-      { image: "images/photo-10.JPG", caption: "PLACEHOLDER: little thing" },
-      { image: "images/photo-11.JPG", caption: "PLACEHOLDER: little thing" }
+      { image: "images/photo-09.JPG" },
+      { image: "images/photo-10.JPG" },
+      { image: "images/photo-11.JPG" }
     ]
   },
 
@@ -41,15 +40,25 @@ const card = {
       { image: "images/photo-13.JPG", caption: "" }
     ],
     text: `
-      PLACEHOLDER BIRTHDAY LETTER. First paragraph.
+      Happy 28th birthday, sayang.
 
-      Leave a blank line between paragraphs to start a new one.
+      I honestly don’t know where to start because there’s so much I want to say, but I’m not very good at these kinds of things. Thank you for being the light that shines for me during these times. You’ve become such an important part of my life, and I’m grateful that I get to be a part of yours.
+
+      I hope that this year, you’ll grow even more and achieve things you previously only dreamed of. I hope you find happiness, make lots of good memories, and get everything you’ve been wishing for and more. And most of all, I hope I’ll get to be a part of it all, forever.
+
+      We’ve been through quite a lot this year. We’ve had our fights, disagreements, misunderstandings, and moments where things felt really difficult between us. But we’ve also had so many happy and unforgettable moments that I know I’ll remember forever. I know there have been times when we’ve both been frustrated, hurt, or unsure of each other. So many moments of blocking each other, pushing each other away, and moments where we felt like this might be the end. But somehow, through all of that, we’re still here.
+
+      We chose to talk things through, understand each other, forgive each other, and most importantly, keep choosing each other. Because I believe that underneath all the arguments and differences, we both believe in our love for each other. I believe that’s what keeps bringing us back to each other, even when things get difficult.
+
+      I hope we keep making more happy, stupid, and unforgettable memories together. And whenever things get difficult again, I hope we remember everything we’ve already been through, all the good moments we’ve shared, and why we chose each other in the first place.
+
+      I don’t know what the future will look like, but I know I want you to be a part of it.
     `
   },
 
   ending: {
     image: "images/photo-14.JPG",
-    message: "I know i havent been the best of partner, ",
+    message: "I know I haven’t been the best of partner, and I know there are still many things I need to learn and improve. But I want you to know that I’ll keep doing everything I can to become the partner you’ve always wished for. I hope that in the years to come, I can keep making you happy, loving you better, and growing together with you. And I hope this will be one of the last few birthdays we celebrate as boyfriend and girlfriend, because I hope someday soon, I’ll get to celebrate your birthday with a different status.",
     tagline: "Here’s to all the memories we haven’t made yet. And to forever of spending your birthdays together.",
     signature: "Love, Ilham Randi"
   }
@@ -88,7 +97,6 @@ function render(c) {
 
     <section>
       <h2>${esc(c.little.title)}</h2>
-      <p class="intro">${esc(c.little.intro)}</p>
       <div class="stack small">${c.little.items.map(polaroid).join("")}</div>
     </section>
 
