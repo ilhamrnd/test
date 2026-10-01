@@ -9,19 +9,19 @@ const card = {
   story: {
     title: "A look back on our relationship for the past year",
     items: [
-      { image: "images/photo-02.JPG", date: "DATE", caption: "PLACEHOLDER: first memory" },
-      { image: "images/photo-03.JPG", date: "DATE", caption: "PLACEHOLDER: early days" },
-      { image: "images/photo-04.svg", date: "DATE", caption: "PLACEHOLDER: when I knew" }
+      { image: "images/photo-02.JPG", caption: "PLACEHOLDER: first memory" },
+      { image: "images/photo-03.JPG", caption: "PLACEHOLDER: early days" },
+      { image: "images/photo-04.JPG", caption: "PLACEHOLDER: when I knew" }
     ]
   },
 
   memories: {
     title: "Places we've been",
     items: [
-      { image: "images/photo-05.JPG", date: "DATE", caption: "Our first trip together" },
-      { image: "images/photo-06.JPG", date: "DATE", caption: "Our first overseas trip together" },
-      { image: "images/photo-07.JPG", date: "DATE", caption: "PLACEHOLDER MEMORY" },
-      { image: "images/photo-08.JPG", date: "DATE", caption: "PLACEHOLDER MEMORY" }
+      { image: "images/photo-05.JPG", caption: "Our first trip together" },
+      { image: "images/photo-06.JPG", caption: "Our first overseas trip together" },
+      { image: "images/photo-07.JPG", caption: "PLACEHOLDER MEMORY" },
+      { image: "images/photo-08.JPG", caption: "PLACEHOLDER MEMORY" }
     ]
   },
 
@@ -61,7 +61,7 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "
 const polaroid = p => `
   <figure class="polaroid">
     <img src="${esc(p.image)}" alt="${esc(p.caption)}" loading="lazy">
-    ${(p.date || p.caption) ? `<figcaption>${p.date ? `<time>${esc(p.date)}</time>` : ""}${esc(p.caption)}</figcaption>` : ""}
+    ${p.caption ? `<figcaption>${esc(p.caption)}</figcaption>` : ""}
   </figure>`;
 
 const paragraphs = t => t.trim().split(/\n\s*\n/).map(p => `<p>${esc(p.replace(/\s+/g, " ").trim())}</p>`).join("");
